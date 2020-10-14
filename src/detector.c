@@ -1679,9 +1679,6 @@ void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filenam
         }
         draw_detections_v3(im, dets, nboxes, thresh, names, alphabet, l.classes, ext_output);
         save_image(im, "predictions");
-        if (!dont_show) {
-            show_image(im, "predictions");
-        }
 
         if (json_file) {
             if (json_buf) {
@@ -1724,11 +1721,6 @@ void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filenam
         free_detections(dets, nboxes);
         free_image(im);
         free_image(sized);
-
-        if (!dont_show) {
-            wait_until_press_key_cv();
-            destroy_all_windows_cv();
-        }
 
         if (filename) break;
     }
