@@ -20,6 +20,7 @@ decaf/
 submission/
 cfg/
 build/darknet/*
+!build/darknet/*.vcxproj
 build_*/
 !build/darknet/YoloWrapper.cs
 .fuse*
@@ -54,4 +55,7 @@ share/
 include/darknet/
 uselib
 uselib_track
-darknet
+./darknet
+Release/
+nogpu_Release/
+weights/
